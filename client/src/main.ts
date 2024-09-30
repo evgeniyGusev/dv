@@ -1,8 +1,6 @@
 import { createApp } from 'vue';
 
-import PrimeVue from 'primevue/config';
-
-import 'primevue/resources/themes/aura-light-green/theme.css';
+import naive from 'naive-ui'
 
 import '@/assets/styles/style.scss';
 import router from '@/router';
@@ -15,5 +13,5 @@ const app = createApp(App);
 setAxios();
 
 app.use(router);
-app.use(PrimeVue);
+app.use(naive);
 app.mount('body');

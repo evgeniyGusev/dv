@@ -4,14 +4,8 @@
 @import 'transition-dialog.scss';
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   font-family: UbuntuMono, sans-serif;
-  font-size: 1rem;
-  line-height: 1;
-  font-weight: 400;
-  color: $color-primary;
 }
 
 body {
@@ -47,9 +41,4 @@ main.main-container {
   width: 100%;
   margin: 0 auto;
   padding: 0 1rem;
-}
-
-.p-editor-container > .p-editor-toolbar.ql-snow,
-.p-editor-container > .p-editor-content.ql-snow {
-  border: 1px solid $color-secondary;
 }
