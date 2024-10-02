@@ -25,10 +25,10 @@ const ChildrenSchema = new mongoose.Schema(
     avatar: {
       type: String,
     },
-    // community: {
-    //   type: mongoose.Schema.Types.ObjectId,
-    //   ref: 'Community',
-    // },
+    community: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Community',
+    },
     // payments: [
     //   {
     //     type: mongoose.Schema.Types.ObjectId,

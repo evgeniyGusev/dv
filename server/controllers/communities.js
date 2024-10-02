@@ -1,4 +1,7 @@
+import mongoose from 'mongoose';
+
 import CommunityModel from '../models/Community.js';
+import ChildrenModel from '../models/Children.js';
 import { ApiError } from '../helpers/api_errors.js';
 
 export async function createNewCommunity(req, res) {
@@ -15,14 +18,20 @@ export async function createNewCommunity(req, res) {
 
 export const getCommunitiesController = async (req, res) => {
   try {
-    const communities = await CommunityModel.find();
+    let communities = await CommunityModel.find();
+    const childrens = await ChildrenModel.find();
+
+    communities = communities.map((community) => ({
+      ...community._doc,
+      children: childrens.filter((child) => child.community.toString() === community._id.toString())
+    }))
 
     if (!communities) {
       ApiError.notFound(res);
     }
 
     return res.status(200).json({
-      data: communities._doc,
+      data: communities,
     });
   } catch (e) {
     ApiError.commonServerError(res);

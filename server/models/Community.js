@@ -6,12 +6,6 @@ const CommunitySchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    children: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Children',
-      },
-    ],
   },
   {
     timestamps: true,
