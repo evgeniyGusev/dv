@@ -1,0 +1,19 @@
+{
+  "firstName": "Лера",
+  "lastName": "Гусева",
+  "birthDate": {
+    "$date": "2017-12-10T21:00:00.000Z"
+  },
+  "gender": "female",
+  "parent": "",
+  "avatar": "",
+  "costPerMonth": 3200,
+  "createdAt": {
+    "$date": "2024-09-29T18:06:46.446Z"
+  },
+  "updatedAt": {
+    "$date": "2024-09-29T18:06:46.446Z"
+  },
+  "__v": 0,
+  "community": "66f99f0967e9a687fc57f39f"
+}

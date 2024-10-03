@@ -36,8 +36,8 @@
 
       <div class="modal-cost-wrapper">
         <div v-for="(value, key) in paymentInputs" :key class="input">
-          <span>{{ value.lastName }} {{ value.firstName }}</span>
-          <n-input v-model:value="value.sum" type="text" placeholder="Сумма" />
+          <span>{{ value.fullName }}</span>
+          <n-input v-model:value="value.cost.choreography" type="text" placeholder="Сумма" />
         </div>
       </div>
     </div>
@@ -60,9 +60,9 @@ const paymentOptions = computed(() => {
   return communities.map(({ _id, name, children }) => ({
     value: _id,
     label: name,
-    children: children.map(({ _id: chId, firstName: chFName, lastName: chLName }) => ({
+    children: children.map(({ _id: chId, fullName: chFName }) => ({
       value: chId,
-      label: `${chLName} ${chFName}`,
+      label: chFName,
     }))
   }));
 });
@@ -74,8 +74,8 @@ const children = computed(() => {
 function handleUpdateValue() {
   const targets = children.value.filter(({ _id }) => paymentTarget.value.includes(_id));
 
-  paymentInputs.value = targets.reduce((acc, { _id, firstName, lastName, costPerMonth }) => {
-    acc[_id] = { firstName, lastName, sum: costPerMonth };
+  paymentInputs.value = targets.reduce((acc, { _id, fullName, cost }) => {
+    acc[_id] = { fullName, cost };
     return acc
   }, {});
 }
@@ -111,6 +111,6 @@ function onNegativeClick() {
 }
 
 .form-wrapper {
-  margin-block: 24px;
+  margin-block: 32px;
 }
 </style>

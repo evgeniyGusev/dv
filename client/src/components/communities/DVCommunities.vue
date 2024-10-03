@@ -14,7 +14,7 @@
             v-model:expanded-names="showChild"
             accordion
           >
-            <n-collapse-item :title="`${child.lastName} ${child.firstName}`" :name="child._id">
+            <n-collapse-item :title="child.fullName" :name="child._id">
               <n-collapse
                 v-for="child in community.children" :key="child._id"
                 v-model:expanded-names="showChild"
