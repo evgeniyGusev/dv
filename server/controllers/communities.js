@@ -24,6 +24,7 @@ export const getCommunitiesController = async (req, res) => {
     communities = communities.map((community) => ({
       ...community._doc,
       children: childrens.filter((child) => child.community.toString() === community._id.toString())
+        .sort((a, b) => a.lastName.localeCompare(b.lastName)),
     }))
 
     if (!communities) {
