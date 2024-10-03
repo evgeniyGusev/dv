@@ -42,3 +42,13 @@ main.main-container {
   margin: 0 auto;
   padding: 0 1rem;
 }
+
+.n-collapse .n-collapse-item .n-collapse-item {
+  margin-left: 10px;
+}
+
+.n-collapse .n-collapse-item .n-collapse-item__header .n-collapse-item__header-main {
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: bold;
+}
